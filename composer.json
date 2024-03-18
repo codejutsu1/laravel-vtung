@@ -19,5 +19,7 @@
             "email": "danieldunu001@gmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "orchestra/testbench": "*"
+    }
 }

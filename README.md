@@ -1,3 +1,3 @@
 # laravel-vtung
 
-An Elegant Package for VTU.ng
+An Elegant Laravel Package for [VTU.ng](https://vtu.ng)
