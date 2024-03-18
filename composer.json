@@ -1,0 +1,23 @@
+{
+    "name": "codejutsu1/laravel-vtung",
+    "description": "An Elegant Laravel Package for Vtu.ng",
+    "keywords": [
+        "php",
+        "github",
+        "laravel",
+        "Open Source",
+        "Vtu.ng",
+        "Laravel 8",
+        "Laravel 9",
+        "Laravel 10",
+        "Laravel 11"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Dunu",
+            "email": "danieldunu001@gmail.com"
+        }
+    ],
+    "require": {}
+}
