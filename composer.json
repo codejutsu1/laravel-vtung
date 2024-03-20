@@ -1,25 +1,80 @@
 {
     "name": "codejutsu1/laravel-vtung",
-    "description": "An Elegant Laravel Package for Vtu.ng",
+    "description": "An Elegant Laravel Package for vtu.ng",
     "keywords": [
-        "php",
-        "github",
+        "codejutsu1",
         "laravel",
-        "Open Source",
-        "Vtu.ng",
-        "Laravel 8",
-        "Laravel 9",
-        "Laravel 10",
-        "Laravel 11"
+        "laravel-vtung"
     ],
+    "homepage": "https://github.com/codejutsu1/laravel-vtung",
     "license": "MIT",
     "authors": [
         {
             "name": "Daniel Dunu",
-            "email": "danieldunu001@gmail.com"
+            "email": "danieldunu001@gmail.com",
+            "role": "Developer"
         }
     ],
+    "require": {
+        "php": "^8.2",
+        "spatie/laravel-package-tools": "^1.16",
+        "illuminate/contracts": "^10.0||^11.0"
+    },
     "require-dev": {
-        "orchestra/testbench": "*"
-    }
+        "laravel/pint": "^1.14",
+        "nunomaduro/collision": "^8.1.1||^7.10.0",
+        "orchestra/testbench": "^9.0.0||^8.22.0",
+        "pestphp/pest": "^2.34",
+        "pestphp/pest-plugin-arch": "^2.7",
+        "pestphp/pest-plugin-laravel": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codejutsu1\\LaravelVtuNg\\Vtu\\": "src/",
+            "Codejutsu1\\LaravelVtuNg\\Vtu\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Codejutsu1\\LaravelVtuNg\\Vtu\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@composer run prepare",
+        "clear": "@php vendor/bin/testbench package:purge-laravel-vtung --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": [
+            "@composer run prepare",
+            "@php vendor/bin/testbench workbench:build --ansi"
+        ],
+        "start": [
+            "Composer\\Config::disableProcessTimeout",
+            "@composer run build",
+            "@php vendor/bin/testbench serve"
+        ],
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Codejutsu1\\LaravelVtuNg\\Vtu\\VtuServiceProvider"
+            ],
+            "aliases": {
+                "Vtu": "Codejutsu1\\LaravelVtuNg\\Vtu\\Facades\\Vtu"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
