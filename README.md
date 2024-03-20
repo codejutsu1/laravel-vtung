@@ -76,7 +76,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Daniel Dunu](https://github.com/Daniel Dunu)
+- [Daniel Dunu](https://github.com/codejutsu1)
 - [All Contributors](../../contributors)
 
 ## License

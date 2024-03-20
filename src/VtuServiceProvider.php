@@ -17,9 +17,6 @@ class VtuServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-vtung')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-vtung_table')
-            ->hasCommand(VtuCommand::class);
+            ->hasConfigFile();
     }
 }
