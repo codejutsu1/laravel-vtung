@@ -1,10 +1,10 @@
 <?php
 
-namespace Codejutsu1\LaravelVtuNg\Vtu;
+namespace Codejutsu1\LaravelVtuNg;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Codejutsu1\LaravelVtuNg\Vtu\Commands\VtuCommand;
+use Codejutsu1\LaravelVtuNg\Commands\VtuCommand;
 
 class VtuServiceProvider extends PackageServiceProvider
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Codejutsu1\LaravelVtuNg\Vtu\Tests;
+namespace Codejutsu1\LaravelVtuNg\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Codejutsu1\LaravelVtuNg\Vtu\VtuServiceProvider;
+use Codejutsu1\LaravelVtuNg\VtuServiceProvider;
 
 class TestCase extends Orchestra
 {

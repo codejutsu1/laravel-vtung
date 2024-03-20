@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Codejutsu1\\LaravelVtuNg\\Vtu\\": "src/",
+            "Codejutsu1\\LaravelVtuNg\\": "src/",
             "Codejutsu1\\LaravelVtuNg\\Vtu\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Codejutsu1\\LaravelVtuNg\\Vtu\\Tests\\": "tests/",
+            "Codejutsu1\\LaravelVtuNg\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },

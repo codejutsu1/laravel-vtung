@@ -1,6 +1,6 @@
 <?php
 
-namespace Codejutsu1\LaravelVtuNg\Vtu\Commands;
+namespace Codejutsu1\LaravelVtuNg\Commands;
 
 use Illuminate\Console\Command;
 

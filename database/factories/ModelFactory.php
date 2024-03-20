@@ -1,6 +1,6 @@
 <?php
 
-namespace Codejutsu1\LaravelVtuNg\Vtu\Database\Factories;
+namespace Codejutsu1\LaravelVtuNg\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
