@@ -27,7 +27,7 @@ class Vtu
     /**
      * This is the base Url for vtu.ng
      */
-    protected $baseUrl
+    protected $baseUrl;
 
     public function __construct()
     {
@@ -54,11 +54,24 @@ class Vtu
     }
 
     /**
+     * Returns the username and password as arrays
+     */
+    protected function authorization()
+    {
+        return [
+            "username" => $this->username,
+            "password" => $this->password
+        ];
+    }
+
+    /**
      * Making request with authorization
      */
-    protected function purchase(string $service, array $para=null)
+    protected function purchase(string $service, array $para=[])
     {
-        $response = Http::get($this->baseUrl . $service, $para);
+        $data = array_merge($this->authorization(), $para);
+
+        $response = Http::get($this->baseUrl . $service, $data);
 
         return $response->body();
     }
@@ -68,8 +81,10 @@ class Vtu
      * Gets your Balance.
      * @integer
      */
-    public static function getBalance()
+    public function getBalance()
     {
-
+        $response = $this->purchase(service: 'balance');
+        
+        return $response;
     }
 }
