@@ -4,11 +4,13 @@ namespace Codejutsu1\LaravelVtuNg;
 
 use Illuminate\Support\Facades\Http;
 use Codejutsu1\LaravelVtuNg\Traits\VtuResponses;
+use Codejutsu1\LaravelVtuNg\Traits\NetworkProviders;
+use Codejutsu1\LaravelVtuNg\Exceptions\VtuErrorException;
 
 
 class Vtu
 {
-    use VtuResponses;
+    use VtuResponses, NetworkProviders;
     /**
      * Your VTU username
      * @string
@@ -117,8 +119,63 @@ class Vtu
         return $this->purchase(service: 'tv', para: $para);
     }
 
-    public function buyElectricity($para)
+    public function buyElectricity($para): VtuResponses
     {
         return $this->purchase(service: 'electricity', para: $para);
+    }
+
+    public function formatNumber(string $number): string
+    {
+        $number = (string) $number;
+
+        if(strlen($number) > 11){
+            $code = substr($number, 0 ,4);
+
+            if($code != '+234') 
+                throw new VtuErrorException('This is not a Nigeria Number');
+
+            $number = substr($number, 4);
+        }
+
+        if(strlen($number) == 10) {
+            $number = '0' . $number;
+        }
+
+        if(strlen($number) > 15 || strlen($number) < 11 || strlen($number) == 11 && $number[0] != '0') 
+            throw new VtuErrorException('Wrong Phone Number Format');
+
+        return $number;
+    }
+
+    public function getNetworkProvider(string $number): string
+    {
+        try{
+            $number = $this->formatNumber($number);
+        }catch(VtuErrorException $e)
+        {
+            return $e->getMessage();
+        } 
+
+        $digit = substr($number, 0, 4);
+
+        $digit_2 = substr($number, 0, 5);
+
+        switch(true)
+        {
+            case in_array($digit, $this->mtn()) || in_array($digit_2, $this->mtn()):
+                return "mtn";
+                break;
+            case in_array($digit, $this->airtel()):
+                return "airtel";
+                break;
+            case in_array($digit, $this->glo()):
+                return "glo";
+                break;
+            case in_array($digit, $this->mobile_9()):
+                return "etisalat";
+                break;
+            default:
+                return "Could not resolve. Please contact us to resolve the issue.";
+        }
     }
 }

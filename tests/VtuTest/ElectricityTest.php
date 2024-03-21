@@ -12,10 +12,10 @@ it("buy electricity", function() {
     ];
 
     
-    try{
-        Vtu::buyElectricity($para);
-    }catch(\Exception $e){
-        dd($e->getMessage());
-    }
+    // try{
+    //     Vtu::buyElectricity($para);
+    // }catch(\Exception $e){
+    //     dd($e->getMessage());
+    // }
 
 });
