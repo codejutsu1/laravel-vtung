@@ -11,10 +11,11 @@ it("buy electricity", function() {
         "amount" => 3000
     ];
 
+    
     try{
-        return Vtu::buyElectricity($para);
-    }catch(\Exception $e) {
-        dd($e);
+        Vtu::buyElectricity($para);
+    }catch(\Exception $e){
+        dd($e->getMessage());
     }
 
 });

@@ -3,9 +3,12 @@
 namespace Codejutsu1\LaravelVtuNg;
 
 use Illuminate\Support\Facades\Http;
+use Codejutsu1\LaravelVtuNg\Traits\VtuResponses;
+
 
 class Vtu
 {
+    use VtuResponses;
     /**
      * Your VTU username
      * @string
@@ -74,7 +77,7 @@ class Vtu
 
         $response = Http::get($this->baseUrl . $service, $data);
 
-        return $response->body();
+        return $this->responses($response->json());
     }
 
 
@@ -84,9 +87,7 @@ class Vtu
      */
     public function getBalance()
     {
-        $response = $this->purchase(service: 'balance');
-        
-        return $response;
+        return $this->purchase(service: 'balance');
     }
 
     /**
@@ -95,9 +96,7 @@ class Vtu
      */
     public function buyAirtime($para)
     {
-        $response = $this->purchase(service: 'airtime', para: $para);
-
-        return $response;
+        return $this->purchase(service: 'airtime', para: $para);
     }
 
     /**
@@ -105,29 +104,21 @@ class Vtu
      */
     public function buyData($para)
     {
-        $response = $this->purchase(service: 'data', para: $para);
-
-        return $response;
+        return $this->purchase(service: 'data', para: $para);
     }
 
     public function verifyCustomer($para)
     {
-        $response = $this->purchase(service: 'verify-customer', para: $para);
-
-        return $response;
+        return $this->purchase(service: 'verify-customer', para: $para);
     }
 
     public function subscribe($para)
     {
-        $response = $this->purchase(service: 'tv', para: $para);
-
-        return $response;
+        return $this->purchase(service: 'tv', para: $para);
     }
 
     public function buyElectricity($para)
     {
-        $response = $this->purchase(service: 'electricity', para: $para);
-
-        return $response;
+        return $this->purchase(service: 'electricity', para: $para);
     }
 }
