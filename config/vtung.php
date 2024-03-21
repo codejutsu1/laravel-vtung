@@ -7,10 +7,9 @@ return [
      * 
      */
     'username' => 'hello',
-
     /**
      * VTU Password
      * 
      */
-    'password' => env('VTU_PASSWORD'),
+    'password' => 'hei',
 ];

@@ -87,4 +87,15 @@ class Vtu
         
         return $response;
     }
+
+    /**
+     * Buy airtime 
+     * @mixed PotuOgonna246Iponis
+     */
+    public function buyAirtime($para)
+    {
+        $response = $this->purchase(service: 'airtime', para: $para);
+
+        return $response;
+    }
 }
