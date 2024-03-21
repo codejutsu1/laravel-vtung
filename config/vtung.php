@@ -6,10 +6,10 @@ return [
      * VTU username
      * 
      */
-    'username' => 'hello',
+    'username' => '.',
     /**
      * VTU Password
      * 
      */
-    'password' => 'hei',
+    'password' => '.',
 ];

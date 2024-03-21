@@ -29,6 +29,7 @@ class Vtu
      */
     protected $baseUrl;
 
+
     public function __construct()
     {
         $this->setCredentials();
@@ -90,11 +91,42 @@ class Vtu
 
     /**
      * Buy airtime 
-     * @mixed PotuOgonna246Iponis
+     * @mixed PotuOgonna*ya*246Iponis
      */
     public function buyAirtime($para)
     {
         $response = $this->purchase(service: 'airtime', para: $para);
+
+        return $response;
+    }
+
+    /**
+     * Buy Data
+     */
+    public function buyData($para)
+    {
+        $response = $this->purchase(service: 'data', para: $para);
+
+        return $response;
+    }
+
+    public function verifyCustomer($para)
+    {
+        $response = $this->purchase(service: 'verify-customer', para: $para);
+
+        return $response;
+    }
+
+    public function subscribe($para)
+    {
+        $response = $this->purchase(service: 'tv', para: $para);
+
+        return $response;
+    }
+
+    public function buyElectricity($para)
+    {
+        $response = $this->purchase(service: 'electricity', para: $para);
 
         return $response;
     }
