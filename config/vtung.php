@@ -6,10 +6,10 @@ return [
      * VTU username
      * 
      */
-    'username' => '.',
+    'username' => env('username'),
     /**
      * VTU Password
      * 
      */
-    'password' => '.',
+    'password' => env('password'),
 ];
