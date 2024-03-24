@@ -11,28 +11,10 @@ use Codejutsu1\LaravelVtuNg\Exceptions\VtuErrorException;
 class Vtu
 {
     use VtuResponses, NetworkProviders;
-    /**
-     * Your VTU username
-     * @string
-     */
-    protected $username;
 
-    /**
-     * Your VTU password
-     * @string
-     */
-    protected $password;
-
-    /**
-     * Responses from VTU
-     * @mixed
-     */
-    protected $response;
-
-    /**
-     * This is the base Url for vtu.ng
-     */
-    protected $baseUrl;
+    protected string  $username;
+    protected string $password;
+    protected string $baseUrl;
 
 
     public function __construct()
@@ -41,28 +23,18 @@ class Vtu
         $this->setBaseUrl();
     }
 
-    /**
-     * Setting VTU Credentials
-     */
-
     protected function setCredentials()
     {
         $this->username = config('vtung.username');
         $this->password = config('vtung.password');
     }
 
-    /**
-     * Setting the base url
-     */
     protected function setBaseUrl()
     {
         $this->baseUrl = 'https://vtu.ng/wp-json/api/v1/';
     }
 
-    /**
-     * Returns the username and password as arrays
-     */
-    protected function authorization()
+    protected function authorization(): array
     {
         return [
             "username" => $this->username,
@@ -70,10 +42,7 @@ class Vtu
         ];
     }
 
-    /**
-     * Making request with authorization
-     */
-    protected function purchase(string $service, array $para=[])
+    protected function purchase(string $service, array $para=[]): VtuResponses
     {
         $data = array_merge($this->authorization(), $para);
 
@@ -82,44 +51,32 @@ class Vtu
         return $this->responses($response->json());
     }
 
-
-    /**
-     * Gets your Balance.
-     * @integer
-     */
-    public function getBalance()
+    public function getBalance(): string
     {
         return $this->purchase(service: 'balance');
     }
 
-    /**
-     * Buy airtime 
-     * @mixed PotuOgonna*ya*246Iponis
-     */
-    public function buyAirtime($para)
+    public function buyAirtime($para): self
     {
         return $this->purchase(service: 'airtime', para: $para);
     }
 
-    /**
-     * Buy Data
-     */
-    public function buyData($para)
+    public function buyData($para): self
     {
         return $this->purchase(service: 'data', para: $para);
     }
 
-    public function verifyCustomer($para)
+    public function verifyCustomer($para): self
     {
         return $this->purchase(service: 'verify-customer', para: $para);
     }
 
-    public function subscribe($para)
+    public function subscribe($para): self
     {
         return $this->purchase(service: 'tv', para: $para);
     }
 
-    public function buyElectricity($para): VtuResponses
+    public function buyElectricity($para): self
     {
         return $this->purchase(service: 'electricity', para: $para);
     }
@@ -175,7 +132,7 @@ class Vtu
                 return "etisalat";
                 break;
             default:
-                return "Could not resolve. Please contact us to resolve the issue.";
+                return "Could not resolve. Please contact us to resolve this number.";
         }
     }
 }
