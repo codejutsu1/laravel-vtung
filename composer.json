@@ -71,10 +71,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Codejutsu1\\LaravelVtuNg\\Vtu\\VtuServiceProvider"
+                "Codejutsu1\\LaravelVtuNg\\VtuServiceProvider"
             ],
             "aliases": {
-                "Vtu": "Codejutsu1\\LaravelVtuNg\\Vtu\\Facades\\Vtu"
+                "Vtu": "Codejutsu1\\LaravelVtuNg\\Facades\\Vtu"
             }
         }
     },

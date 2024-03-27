@@ -14,7 +14,7 @@ trait VtuResponses {
 
     private function error($response)
     {
-        if(!isset($response)) throw new VtuErrorException("We can't communicate with VTU server.")
+        if(!isset($response)) throw new VtuErrorException("We can't communicate with VTU server.");
         
         throw new VtuErrorException($response['message']);
     }
