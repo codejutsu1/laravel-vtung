@@ -12,8 +12,8 @@ class Vtu
 {
     use VtuResponses, NetworkProviders;
 
-    protected string  $username;
-    protected string $password;
+    protected ?string  $username;
+    protected ?string $password;
     protected string $baseUrl;
 
 
@@ -42,7 +42,7 @@ class Vtu
         ];
     }
 
-    protected function purchase(string $service, array $para=[]): VtuResponses
+    protected function purchase(string $service, array $para=[]): array
     {
         $data = array_merge($this->authorization(), $para);
 
@@ -51,7 +51,7 @@ class Vtu
         return $this->responses($response->json());
     }
 
-    public function getBalance(): string
+    public function getBalance(): array
     {
         return $this->purchase(service: 'balance');
     }
