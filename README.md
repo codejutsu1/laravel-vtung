@@ -33,7 +33,7 @@ php artisan migrate
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-vtung-config"
+php artisan vendor:publish --provider="Codejutsu1\LaravelVtuNg\VtuServiceProvider"
 ```
 
 This is the contents of the published config file:
