@@ -71,7 +71,7 @@ class Vtu
         return $this->purchase(service: 'verify-customer', para: $para);
     }
 
-    public function subscribe($para): self
+    public function subscribeTv($para): self
     {
         return $this->purchase(service: 'tv', para: $para);
     }

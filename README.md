@@ -146,9 +146,9 @@ try{
 }
 ```
 >[!IMPORTANT]
-> You can get the data variation id from the [vtu.ng](https://vtu.ng/api/#data)
+> You can get the data `variation id` from the [vtu.ng](https://vtu.ng/api/#data)
 
-### Verify Customers with their meter number and IUC/Smartcard Number
+### Verify Customers using their meter number and IUC/Smartcard Number
 It requires 3 parameters to verify a customer from [vtu.ng](https://vtu.ng/api/#verify-customers)
 
 ```php
@@ -167,8 +167,31 @@ try{
 }
 ```
 >[!IMPORTANT]
-> You can get the customer_id, service_id and variation_id from the [vtu.ng](https://vtu.ng/api/#verify-customers)
+> You can get the `service_id` from [vtu.ng](https://vtu.ng/api/#verify-customers).
 
+### Purchase/Subscribe CableTv
+
+It requires 4 parameters to purchase or subscribe CableTv from [vtu.ng](https://vtu.ng/api/#tv)
+
+```php
+<?php
+
+$data = [
+    'phone' => '09137822222', //Phone number stored for reference
+    'smartcard_number' =>  '62418234034', // Customer's smartcard number or meter number
+    'service_id' => 'gotv', // Unique id for all cable Tv.
+    'variation_id' => 'gotv-max' // Variation ID for cable package.
+];
+
+try{
+    return Vtu::subscribeTv($data);  
+}catch(\Exception $e){
+    return redirect()->back()->withMessage($e->getMessage());
+}
+
+```
+>[!IMPORTANT]
+> You can get the `service_id` and `variation_id` from [vtu.ng](https://vtu.ng/api/#tv).
 
 ## Testing
 
