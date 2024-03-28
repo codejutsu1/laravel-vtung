@@ -1,30 +1,31 @@
-#laravel-vtung 
+# laravel-vtung 
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/codejutsu1/laravel-vtung.svg?style=flat-square)](https://packagist.org/packages/codejutsu1/laravel-vtung)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/codejutsu1/laravel-vtung/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/codejutsu1/laravel-vtung/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/codejutsu1/laravel-vtung/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/codejutsu1/laravel-vtung/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/codejutsu1/laravel-vtung.svg?style=flat-square)](https://packagist.org/packages/codejutsu1/laravel-vtung)
 
-> An Elegant Laravel Package for vtu.ng
+> An Elegant Laravel Package for [vtu.ng](https://vtu.ng)
 
 ## Installation
 
-To nstall the package via composer:
+To install the package via composer:
 
 ```bash
 composer require codejutsu1/laravel-vtung
 ```
-Setup the project using the command:
+
+To register the service provider and publish the config file.
 
 ```bash
 php artisan vtung:install
 ```
 
-This command registers the service provider and publish the config file.
-
-This is the contents of the published config file placed in the config folder:
+The contents of the published config file placed in the config folder:
 
 ```php
+<?php
+
 // config for Codejutsu1/LaravelVtuNg
 return [
     /**
@@ -43,10 +44,15 @@ return [
 
 ## Usage
 
-```php
-$vtu = new Codejutsu1\LaravelVtuNg\Vtu();
-echo $vtu->echoPhrase('Hello, Codejutsu1\LaravelVtuNg!');
+Open your `.env` file and add your username and password: 
+
 ```
+VTU_USERNAME=
+VTU_PASSWORD=
+
+```
+>[!IMPORTANT] 
+> You must have a reseller account with [vtu.ng](https://vtu.ng/api/) to use our API.
 
 ## Testing
 
