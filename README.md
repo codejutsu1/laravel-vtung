@@ -72,9 +72,11 @@ try{
 
 ### Buy Airtime
 
-It requires 3 parameters to make airtime purchase from [vtu.ng](https://vtu.ng)
+It requires 3 parameters to make airtime purchase from [vtu.ng](https://vtu.ng/#airtime)
 
 ```php
+<?php
+
 $data = [
     'phone' =>  '09137822222', // Phone Number 
     'network_id' => 'mtn', // Network Provider
@@ -92,6 +94,8 @@ try{
 
 You can also format numbers with country code to normal number.
 ```php
+<?php
+
 //Format  +2349010344345 to 09010344345
 
 try{
@@ -106,10 +110,12 @@ try{
 This package gives you the power to get the network provider of any number in Nigeria.
 
 ```php
+<?php
+
 try{
     $network = Vtu::getNetworkProvider('+2349010344345');
 
-    // You can also use the helper
+    // You can use the helper as an alternative
     $networkProvider = vtu()->getNetworkProvider('+2349010344345');
 
     return $networkProvider;    
@@ -117,6 +123,52 @@ try{
     return redirect()->back()->withMessage($e->getMessage());
 }
 ```
+>[!NOTE]
+> You can always use the class `Vtu::buyAirtime()` or the helper `vtu()->buyAirtime()`
+
+### Buy Data
+
+It requires 3 parameters to make data purchase from [vtu.ng](https://vtu.ng/#data)
+
+```php
+<?php
+
+$data = [
+    'phone' =>  '09137822222', // Phone Number 
+    'network_id' => 'mtn', // Network Provider
+    'variation_id' => 'mtn-75gb-15000' //variation id of the mobile data to purchase
+];
+
+try{
+    return Vtu::buyData($data);  
+}catch(\Exception $e){
+    return redirect()->back()->withMessage($e->getMessage());
+}
+```
+>[!IMPORTANT]
+> You can get the data variation id from the [vtu.ng](https://vtu.ng/api/#data)
+
+### Verify Customers with their meter number and IUC/Smartcard Number
+It requires 3 parameters to verify a customer from [vtu.ng](https://vtu.ng/api/#verify-customers)
+
+```php
+<?php
+
+$data = [
+    'customer_id' =>  '62418234034', // Customer's smartcard number or meter number
+    'service_id' => 'gotv', // Unique id for all cable Tv and electricity services.
+    'variation_id' => 'prepaid' // Meter type of the electricity company, optional for cable Tvs.
+];
+
+try{
+    return Vtu::verifyCustomer($data);  
+}catch(\Exception $e){
+    return redirect()->back()->withMessage($e->getMessage());
+}
+```
+>[!IMPORTANT]
+> You can get the customer_id, service_id and variation_id from the [vtu.ng](https://vtu.ng/api/#verify-customers)
+
 
 ## Testing
 
