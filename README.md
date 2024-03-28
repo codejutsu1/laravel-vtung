@@ -15,13 +15,13 @@
     composer require codejutsu1/laravel-vtung
     ```
 
-- Register the service provider and publish the config file.
+- Register the service provider and publish the config file via this command:
 
     ```bash
     php artisan vtung:install
     ```
 
-    A configuration file named `vtung.php` will be placed in the `config` folder on laravel application:
+    A configuration file named `vtung.php` will be placed in the `config` folder of your laravel application:
 
     ```php
     <?php
@@ -53,20 +53,42 @@ VTU_PASSWORD=
 >[!IMPORTANT] 
 > You must have a reseller account with [vtu.ng](https://vtu.ng/api/) to use our API.
 
-###     Check your wallet balance
-    ```php
-    <?php 
 
-    use Codejutsu1\LaravelVtung\Facades\Vtu;
+### Check your wallet balance
+```php
+<?php 
 
-    try{
-        $response = Vtu::getBalance();
-    }catch($e){
-        return $e->getMessage();
-    }
+try{
+    $response = Vtu::getBalance();
 
-    return $response['data']['balance'];
-    ```
+    $balance = $response['data']['balance'];
+
+    return $balance;
+}catch(\Exception $e){
+    return redirect()->back()->withMessage($e->getMessage());
+}
+
+```
+
+### Buy Airtime
+
+It requires 3 parameters to make airtime purchase from [vtu.ng](https://vtu.ng)
+
+```php
+$data = [
+    'phone' =>  '09137822222', // Phone Number 
+    'network_id' => 'mtn', // Network Provider
+    'amount' => 2000 //int Amount to recharge
+];
+
+try{
+    return Vtu::buyAirtime($data);
+}catch(\Exception $e){
+    return redirect()->back()->withMessage($e->getMessage());
+}
+```
+
+
 
 ## Testing
 
