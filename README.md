@@ -9,38 +9,38 @@
 
 ## Installation
 
-To install the package via composer:
+- Install the package via composer:
 
-```bash
-composer require codejutsu1/laravel-vtung
-```
+    ```bash
+    composer require codejutsu1/laravel-vtung
+    ```
 
-To register the service provider and publish the config file.
+- Register the service provider and publish the config file.
 
-```bash
-php artisan vtung:install
-```
+    ```bash
+    php artisan vtung:install
+    ```
 
-The contents of the published config file placed in the config folder:
+    A configuration file named `vtung.php` will be placed in the `config` folder on laravel application:
 
-```php
-<?php
+    ```php
+    <?php
 
-// config for Codejutsu1/LaravelVtuNg
-return [
-    /**
-     * VTU username
-     * 
-     */
-    'username' => env('VTU_USERNAME') ?? null,
-    /**
-     * VTU Password
-     * 
-     */
-    'password' => env('VTU_PASSWORD') ?? null,
-];
+    // config for Codejutsu1/LaravelVtuNg
+    return [
+        /**
+         * VTU username
+         * 
+         */
+        'username' => env('VTU_USERNAME') ?? null,
+        /**
+         * VTU Password
+         * 
+         */
+        'password' => env('VTU_PASSWORD') ?? null,
+    ];
 
-```
+    ```
 
 ## Usage
 
@@ -49,10 +49,24 @@ Open your `.env` file and add your username and password:
 ```
 VTU_USERNAME=
 VTU_PASSWORD=
-
 ```
 >[!IMPORTANT] 
 > You must have a reseller account with [vtu.ng](https://vtu.ng/api/) to use our API.
+
+### Check your wallet balance
+```php
+<?php 
+
+use Codejutsu1\LaravelVtung\Facades\Vtu;
+
+try{
+    $response = Vtu::getBalance();
+}catch($e){
+    return $e->getMessage();
+}
+
+return $response['data']['balance'];
+```
 
 ## Testing
 
