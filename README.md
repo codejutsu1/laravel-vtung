@@ -53,20 +53,20 @@ VTU_PASSWORD=
 >[!IMPORTANT] 
 > You must have a reseller account with [vtu.ng](https://vtu.ng/api/) to use our API.
 
-### Check your wallet balance
-```php
-<?php 
+###     Check your wallet balance
+    ```php
+    <?php 
 
-use Codejutsu1\LaravelVtung\Facades\Vtu;
+    use Codejutsu1\LaravelVtung\Facades\Vtu;
 
-try{
-    $response = Vtu::getBalance();
-}catch($e){
-    return $e->getMessage();
-}
+    try{
+        $response = Vtu::getBalance();
+    }catch($e){
+        return $e->getMessage();
+    }
 
-return $response['data']['balance'];
-```
+    return $response['data']['balance'];
+    ```
 
 ## Testing
 
