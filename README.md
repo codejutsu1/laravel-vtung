@@ -88,7 +88,35 @@ try{
 }
 ```
 
+### Format Number 
 
+You can also format numbers with country code to normal number.
+```php
+//Format  +2349010344345 to 09010344345
+
+try{
+    return Vtu::formatNumber('+2349010344345');
+}catch(\Exception $e){
+    return redirect()->back()->withMessage($e->getMessage());
+}
+```
+
+### Network Provider
+
+This package gives you the power to get the network provider of any number in Nigeria.
+
+```php
+try{
+    $network = Vtu::getNetworkProvider('+2349010344345');
+
+    // You can also use the helper
+    $networkProvider = vtu()->getNetworkProvider('+2349010344345');
+
+    return $networkProvider;    
+}catch(\Exception $e){
+    return redirect()->back()->withMessage($e->getMessage());
+}
+```
 
 ## Testing
 
