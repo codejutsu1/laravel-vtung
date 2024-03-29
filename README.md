@@ -85,6 +85,12 @@ $data = [
 
 try{
     return Vtu::buyAirtime($data);
+
+    /**
+     * Alternatively
+     * 
+     * return vtu()->buyAirtime($data);
+     */ 
 }catch(\Exception $e){
     return redirect()->back()->withMessage($e->getMessage());
 }
@@ -100,6 +106,12 @@ You can also format numbers with country code to normal number.
 
 try{
     return Vtu::formatNumber('+2349010344345');
+    
+    /**
+     * Alternatively
+     * 
+     * return vtu()->formatNumber('+2349010344345');
+     */    
 }catch(\Exception $e){
     return redirect()->back()->withMessage($e->getMessage());
 }
@@ -113,12 +125,13 @@ This package gives you the power to get the network provider of any number in Ni
 <?php
 
 try{
-    $network = Vtu::getNetworkProvider('+2349010344345');
+    return Vtu::getNetworkProvider('+2349010344345');
 
-    // You can use the helper as an alternative
-    $networkProvider = vtu()->getNetworkProvider('+2349010344345');
-
-    return $networkProvider;    
+    /**
+     * Alternatively
+     * 
+     * return vtu()->getNetworkProvider('+2349010344345');
+     */    
 }catch(\Exception $e){
     return redirect()->back()->withMessage($e->getMessage());
 }
@@ -141,6 +154,11 @@ $data = [
 
 try{
     return Vtu::buyData($data);  
+    /**
+     * Alternatively
+     * 
+     * return vtu()->buyData($data);
+     */  
 }catch(\Exception $e){
     return redirect()->back()->withMessage($e->getMessage());
 }
@@ -163,6 +181,11 @@ $data = [
 
 try{
     return Vtu::verifyCustomer($data);  
+    /**
+     * Alternatively
+     * 
+     * return vtu()->verifyCustomer($data);
+     */  
 }catch(\Exception $e){
     return redirect()->back()->withMessage($e->getMessage());
 }
@@ -185,7 +208,12 @@ $data = [
 ];
 
 try{
-    return Vtu::subscribeTv($data);  
+    return Vtu::subscribeTv($data); 
+    /**
+     * Alternatively
+     * 
+     * return vtu()->subscribeTv($data);
+     */   
 }catch(\Exception $e){
     return redirect()->back()->withMessage($e->getMessage());
 }
@@ -205,7 +233,7 @@ $data = [
     'phone' => '09137822222', //Phone number stored for reference
     'meter_number' =>  '62418234034', // Customer's meter number
     'service_id' => 'ikeja-electric', // Unique id for electricity companies.
-    'variation_id' => 'prepaid' // meter type, either prepaid or postpaid.
+    'variation_id' => 'prepaid', // meter type, either prepaid or postpaid.
     'amount' => 8000, //amount of electricity you want to purchase.
 ];
 
@@ -213,7 +241,7 @@ try{
     return Vtu::buyElectricity($data);
     /**
      * Alternatively
-     *  
+     * 
      * return vtu()->buyElectricity($data);
      */  
 }catch(\Exception $e){
