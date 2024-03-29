@@ -72,7 +72,7 @@ try{
 
 ### Buy Airtime
 
-It requires 3 parameters to make airtime purchase from [vtu.ng](https://vtu.ng/#airtime)
+It requires 3 parameters as an array to make airtime purchase from [vtu.ng](https://vtu.ng/#airtime)
 
 ```php
 <?php
@@ -128,7 +128,7 @@ try{
 
 ### Buy Data
 
-It requires 3 parameters to make data purchase from [vtu.ng](https://vtu.ng/#data)
+It requires 3 parameters as an array to make data purchase from [vtu.ng](https://vtu.ng/#data)
 
 ```php
 <?php
@@ -149,7 +149,8 @@ try{
 > You can get the data `variation id` from the [vtu.ng](https://vtu.ng/api/#data)
 
 ### Verify Customers using their meter number and IUC/Smartcard Number
-It requires 3 parameters to verify a customer from [vtu.ng](https://vtu.ng/api/#verify-customers)
+
+It requires 3 parameters as an array to verify a customer from [vtu.ng](https://vtu.ng/api/#verify-customers)
 
 ```php
 <?php
@@ -171,14 +172,14 @@ try{
 
 ### Purchase/Subscribe CableTv
 
-It requires 4 parameters to purchase or subscribe CableTv from [vtu.ng](https://vtu.ng/api/#tv)
+It requires 4 parameters as an array to purchase or subscribe CableTv from [vtu.ng](https://vtu.ng/api/#tv)
 
 ```php
 <?php
 
 $data = [
     'phone' => '09137822222', //Phone number stored for reference
-    'smartcard_number' =>  '62418234034', // Customer's smartcard number or meter number
+    'smartcard_number' =>  '62418234034', // Customer's smartcard/IUC number 
     'service_id' => 'gotv', // Unique id for all cable Tv.
     'variation_id' => 'gotv-max' // Variation ID for cable package.
 ];
@@ -192,6 +193,36 @@ try{
 ```
 >[!IMPORTANT]
 > You can get the `service_id` and `variation_id` from [vtu.ng](https://vtu.ng/api/#tv).
+
+### Pay Electricity Bills
+
+To purchase, it requires 5 parameters as an array to pay electricity bills from [vtu.ng](https://vtu.ng/api/#electricity)
+
+```php
+<?php
+
+$data = [
+    'phone' => '09137822222', //Phone number stored for reference
+    'meter_number' =>  '62418234034', // Customer's meter number
+    'service_id' => 'ikeja-electric', // Unique id for electricity companies.
+    'variation_id' => 'prepaid' // meter type, either prepaid or postpaid.
+    'amount' => 8000, //amount of electricity you want to purchase.
+];
+
+try{
+    return Vtu::buyElectricity($data);
+    /**
+     * Alternatively
+     *  
+     * return vtu()->buyElectricity($data);
+     */  
+}catch(\Exception $e){
+    return redirect()->back()->withMessage($e->getMessage());
+}
+```
+
+>[!IMPORTANT]
+> As usual, you can get the `service_id` and `variation_id` from [vtu.ng](https://vtu.ng/api/#electricity).
 
 ## Testing
 
