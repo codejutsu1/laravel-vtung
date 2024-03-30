@@ -56,27 +56,27 @@ class Vtu
         return $this->purchase(service: 'balance');
     }
 
-    public function buyAirtime($para): self
+    public function buyAirtime($para): array
     {
         return $this->purchase(service: 'airtime', para: $para);
     }
 
-    public function buyData($para): self
+    public function buyData($para): array
     {
         return $this->purchase(service: 'data', para: $para);
     }
 
-    public function verifyCustomer($para): self
+    public function verifyCustomer($para): array
     {
         return $this->purchase(service: 'verify-customer', para: $para);
     }
 
-    public function subscribeTv($para): self
+    public function subscribeTv($para): array
     {
         return $this->purchase(service: 'tv', para: $para);
     }
 
-    public function buyElectricity($para): self
+    public function buyElectricity($para): array
     {
         return $this->purchase(service: 'electricity', para: $para);
     }
