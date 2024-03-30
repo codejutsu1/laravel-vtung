@@ -192,6 +192,8 @@ try{
 ```
 >[!IMPORTANT]
 > You can get the `service_id` from [vtu.ng](https://vtu.ng/api/#verify-customers).
+> You can verify EEDC customers using the `service_id` as `enugu-electric` but you can't pay EEDC Electricity Bills using [vtu.ng](https://vtu.ng/api/#electricity).
+
 
 ### Purchase/Subscribe CableTv
 
