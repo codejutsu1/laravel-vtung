@@ -68,6 +68,8 @@ VTU_PASSWORD=
 ```php
 <?php 
 
+use Codejutsu1\LaravelVtuNg\Facades\Vtu;
+
 try{
     $response = Vtu::getBalance();
 
