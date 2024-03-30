@@ -98,7 +98,8 @@ try{
 
 ### Format Number 
 
-You can also format numbers with country code to normal number.
+You can also format internation numbers (Nigeria Numbers with +234 code) to local number.
+
 ```php
 <?php
 
@@ -192,7 +193,7 @@ try{
 ```
 >[!IMPORTANT]
 > You can get the `service_id` from [vtu.ng](https://vtu.ng/api/#verify-customers).
-> You can verify EEDC customers using the `service_id` as `enugu-electric` but you can't pay EEDC Electricity Bills using [vtu.ng](https://vtu.ng/api/#electricity).
+> You can verify EEDC customers using the `service_id` as `enugu-electric` but you can't pay EEDC Electricity Bills with [vtu.ng](https://vtu.ng/api/#electricity).
 
 
 ### Purchase/Subscribe CableTv
