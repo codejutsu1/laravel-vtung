@@ -98,7 +98,7 @@ try{
 
 ### Format Number 
 
-You can also format internation numbers (Nigeria Numbers with +234 code) to local number.
+You can also format Nigerian Number with +234 code to local number.
 
 ```php
 <?php
