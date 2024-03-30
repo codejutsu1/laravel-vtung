@@ -53,6 +53,16 @@ VTU_PASSWORD=
 >[!IMPORTANT] 
 > You must have a reseller account with [vtu.ng](https://vtu.ng/api/) to use our API.
 
+### Services
+
+[Wallet Balance](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#check-your-wallet-balance)
+[Airtime](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#buy-airtime)
+[Data](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#buy-data)
+[Customer Verification](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#verify-customers-using-their-meter-number-and-iucsmartcard-number)
+[CableTv](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#purchasesubscribe-cabletv)
+[Electricity](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#pay-electricity-bills)
+[Format Number](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#format-number)
+[Network Provider](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#network-provider)
 
 ### Check your wallet balance
 ```php
