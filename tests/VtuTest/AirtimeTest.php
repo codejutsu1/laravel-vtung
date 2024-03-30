@@ -1,16 +1,12 @@
 <?php
 
-use Codejutsu1\LaravelVtuNg\Facades\Vtu;
+it('throws an exception when buying airtime', function () {
+    $data = [
+        'phone' => '00112233445',
+        'network_id' => 'mtn',
+        'amount' => 40000   
+    ];
 
-// it('can buy airtime from VTU', function () {
-//     $data = [
-//         'hello' => 'Hello',
-//         'phone' => '07011290234',
-//         'network_id' => 'mtn',
-//     ];
-
-//     $response = vtu()->buyAirtime($data);
-    
-//     dd($response);
-// });
+    vtu()->buyAirtime($data);
+})->throws(Exception::class);
 

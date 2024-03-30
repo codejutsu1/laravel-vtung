@@ -1,8 +1,6 @@
 <?php 
 
-use Codejutsu1\LaravelVtuNg\Facades\Vtu;
-
-it("buy electricity", function() {
+it("throws an exception when buying electricity", function() {
     $para = [
         "phone" => "07045461790",
         "meter_number" => "62418234034",
@@ -11,11 +9,6 @@ it("buy electricity", function() {
         "amount" => 3000
     ];
 
-    
-    // try{
-    //     Vtu::buyElectricity($para);
-    // }catch(\Exception $e){
-    //     dd($e->getMessage());
-    // }
+    vtu()->buyElectricity($para);
 
-});
+})->throws(Exception::class);

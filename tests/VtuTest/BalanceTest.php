@@ -1,10 +1,6 @@
 <?php
 
-use Codejutsu1\LaravelVtuNg\Facades\Vtu;
-
-// it('can get the balance from VTU', function () {
-//     $response = vtu()->getBalance();
-    
-//     dd($response);
-// });
+it('throws an exception when getting wallet balance', function () {
+    vtu()->getBalance();
+})->throws(Exception::class);
 

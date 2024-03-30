@@ -1,26 +1,24 @@
 <?php
 
-// it("can verify a customer from VTU", function() {
-//     $para = [
-//         "customer_id" => "62418234034",
-//         "service_id" => "ikeja-electric",
-//         "variation_id" => "prepaid"
-//     ];
+it("throws an exception when verifying a customer from VTU.ng", function() {
+    $para = [
+        "customer_id" => "62418234034",
+        "service_id" => "ikeja-electric",
+        "variation_id" => "prepaid"
+    ];
 
-//     $response = vtu()->verifyCustomer($para);
+    vtu()->verifyCustomer($para);
 
-//     dd($response);
-// });
+})->throws(Exception::class);
 
-// it("can buy a cable subscription", function() {
-//     $para = [
-//         "phone" => "07045461790",
-//         "service_id" => "gotv", 
-//         "smartcard_number" => "7032400086",
-//         "variation_id" => "gotv-max"
-//     ];
+it("throws an exception when subscribing for a cableTv", function() {
+    $para = [
+        "phone" => "07045461790",
+        "service_id" => "gotv", 
+        "smartcard_number" => "7032400086",
+        "variation_id" => "gotv-max"
+    ];
 
-//     $response = vtu()->subscribe($para);
+    vtu()->subscribeTv($para);
 
-//     dd($response);
-// });
+})->throws(Exception::class);
