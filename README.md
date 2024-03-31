@@ -63,7 +63,7 @@ VTU_PASSWORD=
 - [Customer Verification](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#verify-customers-using-their-meter-number-and-iucsmartcard-number)
 - [CableTv](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#purchasesubscribe-cabletv)
 - [Electricity](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#pay-electricity-bills)
-- [Format Number](#format-number)
+- [Format Number](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#format-number)
 - [Network Provider](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#network-provider)
 
 ### Check your wallet balance
@@ -281,7 +281,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Feel free to submit Issues (for bugs or suggestions) and Pull Requests.
 
 ## Security Vulnerabilities
 
