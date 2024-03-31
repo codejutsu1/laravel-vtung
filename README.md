@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/codejutsu1/laravel-vtung.svg?style=flat-square)](https://packagist.org/packages/codejutsu1/laravel-vtung)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/codejutsu1/laravel-vtung/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/codejutsu1/laravel-vtung/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/codejutsu1/laravel-vtung/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/codejutsu1/laravel-vtung/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![License](https://img.shields.io/packagist/l/codejutsu1/laravel-vtung.svg?style=flat-square)](https://packagist.org/packages/codejutsu1/laravel-vtung)
 [![Total Downloads](https://img.shields.io/packagist/dt/codejutsu1/laravel-vtung.svg?style=flat-square)](https://packagist.org/packages/codejutsu1/laravel-vtung)
 
 > An Elegant Laravel Package for [vtu.ng](https://vtu.ng)
@@ -63,7 +63,7 @@ VTU_PASSWORD=
 - [Customer Verification](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#verify-customers-using-their-meter-number-and-iucsmartcard-number)
 - [CableTv](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#purchasesubscribe-cabletv)
 - [Electricity](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#pay-electricity-bills)
-- [Format Number](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#format-number)
+- [Format Number](#format-number)
 - [Network Provider](https://github.com/codejutsu1/laravel-vtung?tab=readme-ov-file#network-provider)
 
 ### Check your wallet balance
@@ -285,7 +285,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security Vulnerabilities
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+If you discover a security vulnerability within this package, please send an email to Daniel Dunu at [danieldunu001@gmail.com](mailto:danieldunu001@gmail.com). All security vulnerabilities will be promptly addressed..
 
 ## Credits
 
