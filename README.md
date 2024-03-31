@@ -9,6 +9,8 @@
 
 ## Installation
 
+[PHP](https://www.php.net/) 8.2+ and [Composer](https://getcomposer.org/) are required.
+
 - Install the package via composer:
 
     ```bash
