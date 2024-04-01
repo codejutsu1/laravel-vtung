@@ -17,7 +17,7 @@
     composer require codejutsu1/laravel-vtung
     ```
 
-- Register the service provider and publish the config file via this command:
+- `Optional` you can publish the config file via this command:
 
     ```bash
     php artisan vtung:install
