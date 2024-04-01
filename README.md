@@ -70,10 +70,8 @@ VTU_PASSWORD=
 ```php
 <?php 
 
-use Codejutsu1\LaravelVtuNg\Facades\Vtu;
-
 try{
-    $response = Vtu::getBalance();
+    $response = vtu()->getBalance();
 
     $balance = $response['data']['balance'];
 
@@ -98,16 +96,21 @@ $data = [
 ];
 
 try{
-    return Vtu::buyAirtime($data);
+    $response = Vtu::buyAirtime($data);
 
     /**
-     * Alternatively
+     * Alternatively, use:
      * 
-     * return vtu()->buyAirtime($data);
+     * $response = vtu()->buyAirtime($data);
      */ 
 }catch(\Exception $e){
     return redirect()->back()->withMessage($e->getMessage());
 }
+
+if($response['code'] == 'success'){
+    //Your business logic here.
+}
+
 ```
 
 ### Format Number 
@@ -123,7 +126,7 @@ try{
     return Vtu::formatNumber('+2349010344345');
     
     /**
-     * Alternatively
+     * Alternatively, use:
      * 
      * return vtu()->formatNumber('+2349010344345');
      */    
@@ -143,7 +146,7 @@ try{
     return Vtu::getNetworkProvider('+2349010344345');
 
     /**
-     * Alternatively
+     * Alternatively, use:
      * 
      * return vtu()->getNetworkProvider('+2349010344345');
      */    
@@ -168,15 +171,20 @@ $data = [
 ];
 
 try{
-    return Vtu::buyData($data);  
+    $response = Vtu::buyData($data);  
     /**
-     * Alternatively
+     * Alternatively, use:
      * 
-     * return vtu()->buyData($data);
+     * $response = vtu()->buyData($data);
      */  
 }catch(\Exception $e){
     return redirect()->back()->withMessage($e->getMessage());
 }
+
+if($response['code'] == 'success'){
+    //Your business logic here.
+}
+
 ```
 >[!IMPORTANT]
 > You can get the data `variation id` from the [vtu.ng](https://vtu.ng/api/#data)
@@ -195,15 +203,20 @@ $data = [
 ];
 
 try{
-    return Vtu::verifyCustomer($data);  
+    $response = Vtu::verifyCustomer($data);  
     /**
-     * Alternatively
-     * 
-     * return vtu()->verifyCustomer($data);
+     * Alternatively, use:
+     *      
+     * $response = vtu()->verifyCustomer($data);
      */  
 }catch(\Exception $e){
     return redirect()->back()->withMessage($e->getMessage());
 }
+
+if($response['code'] == 'success'){
+    //Your business logic here.
+}
+
 ```
 >[!IMPORTANT]
 > You can get the `service_id` from [vtu.ng](https://vtu.ng/api/#verify-customers).
@@ -225,14 +238,18 @@ $data = [
 ];
 
 try{
-    return Vtu::subscribeTv($data); 
+    $response = Vtu::subscribeTv($data); 
     /**
-     * Alternatively
+     * Alternatively, use:
      * 
-     * return vtu()->subscribeTv($data);
+     * $response = vtu()->subscribeTv($data);
      */   
 }catch(\Exception $e){
     return redirect()->back()->withMessage($e->getMessage());
+}
+
+if($response['code'] == 'success'){
+    //Your business logic here.
 }
 
 ```
@@ -255,15 +272,20 @@ $data = [
 ];
 
 try{
-    return Vtu::buyElectricity($data);
+    $response = Vtu::buyElectricity($data);
     /**
-     * Alternatively
+     * Alternatively, use:
      * 
-     * return vtu()->buyElectricity($data);
+     * $response = vtu()->buyElectricity($data);
      */  
 }catch(\Exception $e){
     return redirect()->back()->withMessage($e->getMessage());
 }
+
+if($response['code'] == 'success'){
+    //Your business logic here.
+}
+
 ```
 
 >[!IMPORTANT]
