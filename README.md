@@ -281,7 +281,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Contributing
 
-Feel free to submit Issues (for bugs or suggestions) and Pull Requests.
+Feel free to submit Issues (for bugs or suggestions) and Pull Requests(to the 1.x branch).
 
 ## Security Vulnerabilities
 
